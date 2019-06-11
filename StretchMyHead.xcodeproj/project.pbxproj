@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED117B0522B02EAB0024819B /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED117B0422B02EAB0024819B /* NewsItem.swift */; };
+		ED263D0A22B004A800C10F0D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED263D0922B004A800C10F0D /* NewsTableViewCell.swift */; };
 		EDA439B722B001D200B58F69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA439B622B001D200B58F69 /* AppDelegate.swift */; };
 		EDA439B922B001D200B58F69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA439B822B001D200B58F69 /* ViewController.swift */; };
 		EDA439BC22B001D200B58F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA439BA22B001D200B58F69 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED117B0422B02EAB0024819B /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		ED263D0922B004A800C10F0D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		EDA439B322B001D200B58F69 /* StretchMyHead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StretchMyHead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA439B622B001D200B58F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA439B822B001D200B58F69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				EDA439B622B001D200B58F69 /* AppDelegate.swift */,
 				EDA439B822B001D200B58F69 /* ViewController.swift */,
+				ED117B0422B02EAB0024819B /* NewsItem.swift */,
+				ED263D0922B004A800C10F0D /* NewsTableViewCell.swift */,
 				EDA439BA22B001D200B58F69 /* Main.storyboard */,
 				EDA439BD22B001D400B58F69 /* Assets.xcassets */,
 				EDA439BF22B001D400B58F69 /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA439B922B001D200B58F69 /* ViewController.swift in Sources */,
+				ED117B0522B02EAB0024819B /* NewsItem.swift in Sources */,
 				EDA439B722B001D200B58F69 /* AppDelegate.swift in Sources */,
+				ED263D0A22B004A800C10F0D /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

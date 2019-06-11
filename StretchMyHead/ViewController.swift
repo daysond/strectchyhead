@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var headerView: UIView!
+    var headerView: UIView!
     
     private var categoryInfo: (String, UIColor)!
     private var allNews: [NewsItem] = []
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        headerView = tableView.tableHeaderView
         setDateLbel()
         setHeaderView()
         setMaskLayer()
@@ -79,8 +79,8 @@ class ViewController: UIViewController {
     
     private func setHeaderView() {
         
-        let effectiveHeight: CGFloat = kTableHeaderHeight - kTableHeaderCutAway/2
-                tableView.tableHeaderView = nil
+//        let effectiveHeight: CGFloat = kTableHeaderHeight - kTableHeaderCutAway/2
+        tableView.tableHeaderView = nil
         headerView.translatesAutoresizingMaskIntoConstraints = false
         
 
@@ -90,15 +90,15 @@ class ViewController: UIViewController {
         widthConstraint = headerView.widthAnchor.constraint(equalTo: self.view.widthAnchor)
         heightConstraint = headerView.heightAnchor.constraint(equalToConstant: kTableHeaderHeight)
         NSLayoutConstraint.activate([
-//            topConstraint,
-//            widthConstraint,
-//            heightConstraint,
-//            headerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            topConstraint,
+            widthConstraint,
+            heightConstraint,
+            headerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
             ])
         
-//        tableView.contentInset.top =  kTableHeaderHeight
-//        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        tableView.contentInset.top =  kTableHeaderHeight
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
     
     }
     
@@ -106,21 +106,20 @@ class ViewController: UIViewController {
         
         let offset = tableView.contentOffset
         let yTransition = offset.y + kTableHeaderHeight
-        let effectiveHeight: CGFloat = kTableHeaderHeight - kTableHeaderCutAway/2
-        
-        var headRect = CGRect(x: 0, y: 200, width: tableView.bounds.width, height: kTableHeaderHeight)
-        headerView.frame = headRect
-//        if offset.y < -kTableHeaderHeight {
-//            widthConstraint.constant = 0
-//            heightConstraint.constant = kTableHeaderHeight
-//            heightConstraint.constant = kTableHeaderHeight - yTransition
-//            widthConstraint.constant -= yTransition
-//
-//        } else {
-//            topConstraint.constant = 0
-//            topConstraint.constant -= yTransition
-//        }
-//
+//        let effectiveHeight: CGFloat = kTableHeaderHeight - kTableHeaderCutAway/2
+//        var headRect = CGRect(x: 0, y: 500, width: tableView.bounds.width, height: kTableHeaderHeight)
+//        headerView.frame = headRect
+        if offset.y < -kTableHeaderHeight {
+            widthConstraint.constant = 0
+            heightConstraint.constant = kTableHeaderHeight
+            heightConstraint.constant = kTableHeaderHeight - yTransition
+            widthConstraint.constant -= yTransition
+
+        } else {
+            topConstraint.constant = 0
+            topConstraint.constant -= yTransition
+        }
+
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: headerView.frame.width, y: 0))

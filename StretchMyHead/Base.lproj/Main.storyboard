@@ -104,7 +104,6 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="3Wt-iW-UTR" id="3e9-pP-B3H"/>
-                        <outlet property="headerView" destination="oCU-kL-tTz" id="kVG-HC-M5u"/>
                         <outlet property="tableView" destination="2nI-xd-v6o" id="jzZ-uX-vHz"/>
                     </connections>
                 </viewController>

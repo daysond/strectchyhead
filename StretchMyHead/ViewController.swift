@@ -86,6 +86,7 @@ class ViewController: UIViewController {
 
         tableView.addSubview(headerView)
 
+//        headerView.translatesAutoresizingMaskIntoConstraints = true
         topConstraint = headerView.topAnchor.constraint(equalTo: self.view.topAnchor)
         widthConstraint = headerView.widthAnchor.constraint(equalTo: self.view.widthAnchor)
         heightConstraint = headerView.heightAnchor.constraint(equalToConstant: kTableHeaderHeight)
@@ -94,7 +95,7 @@ class ViewController: UIViewController {
             widthConstraint,
             heightConstraint,
             headerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            
+
             ])
         
         tableView.contentInset.top =  kTableHeaderHeight
@@ -107,7 +108,7 @@ class ViewController: UIViewController {
         let offset = tableView.contentOffset
         let yTransition = offset.y + kTableHeaderHeight
 //        let effectiveHeight: CGFloat = kTableHeaderHeight - kTableHeaderCutAway/2
-//        var headRect = CGRect(x: 0, y: 500, width: tableView.bounds.width, height: kTableHeaderHeight)
+//        var headRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
 //        headerView.frame = headRect
         if offset.y < -kTableHeaderHeight {
             widthConstraint.constant = 0
